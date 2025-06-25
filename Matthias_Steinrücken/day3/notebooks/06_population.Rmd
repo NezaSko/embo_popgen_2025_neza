@@ -79,8 +79,30 @@ Plot the posterior probability, assuming a uniform prior (alpha = beta = 1). The
 What happens to the distribution if we have only 10 samples (with the sample allele frequency of 0.20)?
 
 ```{r}
-#...
+k <- 40
+n <- 200
+
+post.dist <- dbeta(
+  x <- seq(0, 1, 0.01), 
+  shape1 <- k + 1, 
+  shape2 <- n - k +1
+)
+
+plot(post.dist)
 ```
+```{r}
+k <- 40
+n <- 200
+
+post.dist <- dbeta(
+  x <- seq(0, 1, 0.01), 
+  shape1 <- k + 0, 
+  shape2 <- n - k +1
+)
+
+plot(post.dist)
+```
+
 
 We can think of a more informative prior.
 The genome-wide distribution of allele frequencies for human populations as a particular shape. This is called a site frequency spectrum (SFS) or allele frequency spectrum (AFS).

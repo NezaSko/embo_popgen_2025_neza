@@ -10,7 +10,7 @@ demography.add_population(name="AFR", initial_size=30_000)
 demography.add_population(name="EUR", initial_size=20_000)
 
 # instantaneous reduction of size 
-demography.add_population_parameters_change(population="EUR", time=100, initial_size=10_000)
+#demography.add_population_parameters_change(population="EUR", time=100, initial_size=10_000)
 
 demography.add_population(name="ANC", initial_size=50_000)
 demography.add_population_split(time=2000, derived=["AFR", "EUR"], ancestral="ANC") # split 2k generations ago
